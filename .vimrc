@@ -149,3 +149,6 @@ if has("cscope")
     map c<C-]> :scs find g <C-R>=expand("<cword>")<CR><CR>
     map c<C-\> :scs find s <C-R>=expand("<cword>")<CR><CR>
 endif
+
+" only indent one shiftwidth each line
+let g:SimpleJsIndenter_BriefMode = 1
