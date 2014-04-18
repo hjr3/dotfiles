@@ -3,21 +3,10 @@
 " Automatically reload .vimrc when changing
 autocmd! bufwritepost .vimrc source! %
 
-" Enable pathogen bundles
-" See http://www.vim.org/scripts/script.php?script_id=2332
-" Put github plugins under .vim/bundle/ -- which allows keeping them updated
-" without having to do separate installation.
-" Call "filetype off" first to ensure that bundle ftplugins can be added to the
-" path before we re-enable it later in the vimrc.
-filetype off
-"call pathogen#runtime_append_all_bundles()
-"call pathogen#helptags()
-
 if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
     set fileencodings=utf-8,latin1
 endif
 set encoding=utf-8
-
 
 set nocompatible        "  Use Vim defaults (much better!)
 set bs=2                "  allow backspacing over everything in insert mode
@@ -84,6 +73,8 @@ if has("autocmd")
     autocmd BufNewFile,BufRead *.phtml set ft=php
     autocmd BufNewFile,BufRead *.phps set ft=php
     autocmd BufNewFile,BufRead *.twig set ft=html
+
+    autocmd BufNewFile,BufRead *.rs set ft=rust
 
     "  Set some default file editing settings
     "autocmd BufNewFile,BufReadPost,FileReadPost * set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
