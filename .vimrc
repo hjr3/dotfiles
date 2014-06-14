@@ -68,13 +68,14 @@ if has("autocmd")
     "autocmd BufNewFile,BufReadPost,FileReadPost *.txt set tw=78
 
     " use php syntax for phtml files
-    autocmd BufNewFile,BufRead *.inc set ft=php
-    autocmd BufNewFile,BufRead *.phpt set ft=php
-    autocmd BufNewFile,BufRead *.phtml set ft=php
-    autocmd BufNewFile,BufRead *.phps set ft=php
-    autocmd BufNewFile,BufRead *.twig set ft=html
+    autocmd BufNewFile,BufRead *.inc set filetype=php
+    autocmd BufNewFile,BufRead *.phpt set filetype=php
+    autocmd BufNewFile,BufRead *.phtml set filetype=php
+    autocmd BufNewFile,BufRead *.phps set filetype=php
+    autocmd BufNewFile,BufRead *.twig set filetype=html
 
-    autocmd BufNewFile,BufRead *.rs set ft=rust
+    autocmd BufNewFile,BufRead *.rs set filetype=rust
+    autocmd BufNewFile,BufRead *.md set filetype=markdown
 
     "  Set some default file editing settings
     "autocmd BufNewFile,BufReadPost,FileReadPost * set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
