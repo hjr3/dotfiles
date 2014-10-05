@@ -10,3 +10,4 @@ The list of repos are:
 	* https://github.com/tpope/vim-markdown
 	* https://github.com/wting/rust.vim
 	* https://github.com/pangloss/vim-javascript
+	* https://github.com/guns/vim-clojure-static
