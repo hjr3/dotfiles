@@ -4,7 +4,6 @@
 .Xauthority
 .aws
 .bash_history
-.bash_profile
 .cargo/
 .composer/
 .cups/
