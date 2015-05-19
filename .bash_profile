@@ -4,7 +4,7 @@ export EDITOR=vim
 export PS1='\u@\h \w !! '
 export AUTHOR="Herman J. Radtke III"
 
-export PATH=~/bin:$PATH
+export PATH=~/bin:/usr/local/git/bin:$PATH
 
 source ~/.aws
 
