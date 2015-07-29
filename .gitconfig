@@ -1,11 +1,7 @@
 [user]
     name = Herman J. Radtke III
-    email = hermanradtke@gmail.com
+    email = herman@hermanradtke.com
 [color]
     ui = auto
-[credential]
-    helper = cache --timeout=300
-[credential "https://github.com"]
-    username = hjr3
 [diff]
     algorithm = patience
