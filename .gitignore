@@ -54,11 +54,20 @@ Library/
 Movies/
 Music/
 Pictures/
-Public/
 VirtualBox VMs/
 bin/
 projects/
-src/
+./src/
 ssh
-test
+./test
 tmp/
+.bash_profile~
+.boot2docker/
+.docker/
+.lldb/
+.multirust/
+.oracle_jre_usage/
+.rustup/
+Public/
+src/
+.babel.json

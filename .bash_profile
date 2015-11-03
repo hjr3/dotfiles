@@ -12,12 +12,14 @@ export EC2_HOME=~/.ec2
 export PATH=$PATH:$EC2_HOME/bin
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
 
-source /usr/local/share/chruby/chruby.sh
-chruby ruby-1.9
-source /usr/local/share/chruby/auto.sh
-
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
 export HISTSIZE=10000
 export HISTFILESIZE=100000
+
+# boot2docker
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Users/herman/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
+export PATH="/usr/local/sbin:$PATH"
