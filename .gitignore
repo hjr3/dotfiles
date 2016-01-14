@@ -21,6 +21,7 @@
 .lein/
 .lesshst
 .lighttable/
+.local/
 .m2/
 .netrc
 .node-gyp/
@@ -31,7 +32,9 @@
 .ruby-version
 .sbt/
 .scala_history
-.ssh/
+!/.ssh
+/.ssh/*
+!/.ssh/config
 .subversion/
 .swl
 .swk
@@ -69,5 +72,4 @@ tmp/
 .oracle_jre_usage/
 .rustup/
 Public/
-src/
 .babel.json
