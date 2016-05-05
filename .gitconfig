@@ -1,9 +1,9 @@
 [user]
-    name = Herman J. Radtke III
+    name = Herman J. Radtke III (hjr3)
     email = herman@hermanradtke.com
 [color]
     ui = auto
 [diff]
     algorithm = patience
 [commit]
-	gpgsign = true
+    gpgsign = true

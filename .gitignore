@@ -60,7 +60,7 @@ Pictures/
 VirtualBox VMs/
 bin/
 projects/
-./src/
+./src
 ssh
 ./test
 tmp/
@@ -73,3 +73,5 @@ tmp/
 .rustup/
 Public/
 .babel.json
+.npmrc
+.exercism.json
