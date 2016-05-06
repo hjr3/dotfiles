@@ -75,3 +75,4 @@ Public/
 .babel.json
 .npmrc
 .exercism.json
+.bash_sessions
