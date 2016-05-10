@@ -1,6 +1,7 @@
 [user]
-    name = Herman J. Radtke III (hjr3)
+    name = Herman J. Radtke III
     email = herman@hermanradtke.com
+    signingKey = 553CB2D7
 [color]
     ui = auto
 [diff]
