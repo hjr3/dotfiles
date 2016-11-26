@@ -19,8 +19,7 @@ export HISTSIZE=10000
 export HISTFILESIZE=100000
 
 # cargo
-export PATH="$HOME/.cargo:$PATH"
-export PATH="$HOME/.multirust/toolchains/stable/cargo/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 alias vi='nvim'
 alias vim='nvim'
