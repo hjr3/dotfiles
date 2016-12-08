@@ -30,6 +30,9 @@ Plug 'tpope/vim-markdown'
 " Javascript syntax
 Plug 'pangloss/vim-javascript'
 
+" Scala syntax
+Plug 'https://github.com/derekwyatt/vim-scala'
+
 " Add plugins to &runtimepath
 call plug#end()
 
