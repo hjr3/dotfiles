@@ -1,5 +1,5 @@
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
-export EDITOR=vim
+export EDITOR=nvim
 
 export PS1='\u@\h \w !! '
 export AUTHOR="Herman J. Radtke III"
