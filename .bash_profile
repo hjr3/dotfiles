@@ -6,7 +6,9 @@ export AUTHOR="Herman J. Radtke III"
 
 export PATH=~/bin:/usr/local/git/bin:$PATH
 
-source ~/.aws
+if [ -d "~/.aws" ]; then
+  source ~/.aws
+fi
 
 export EC2_HOME=~/.ec2
 export PATH=$PATH:$EC2_HOME/bin
