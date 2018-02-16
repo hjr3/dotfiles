@@ -1,41 +1,43 @@
 call plug#begin('~/.config/nvim/plugged')
 
-" Cap'N Proto schema files syntax highlighting.
-Plug 'cstrahan/vim-capnp'
+Plug 'vim-airline/vim-airline'
+Plug 'bronson/vim-trailing-whitespace'
 
 " Install the gruvbox color scheme.
 Plug 'morhetz/gruvbox'
 
-" Rust file detection, syntax highlighting and autoformatting.
-Plug 'rust-lang/rust.vim'
-" run rustfmt on save
-let g:rustfmt_autosave = 0
+" Cap'N Proto
+Plug 'cstrahan/vim-capnp'
 
-" TOML syntax
-Plug 'cespare/vim-toml'
-
-" Lightweight status bar.
-Plug 'bling/vim-airline'
-let g:airline#extensions#tabline#enabled = 1
-
-" Highlight trailing whitespace.
-Plug 'bronson/vim-trailing-whitespace'
-
-" PHP syntax
-Plug 'https://github.com/StanAngeloff/php.vim'
-
-" Markdown syntax
-Plug 'tpope/vim-markdown'
-
-" Javascript syntax
+" Javascript
 Plug 'pangloss/vim-javascript'
 
-" Scala syntax
+" Markdown
+Plug 'tpope/vim-markdown'
+
+" PHP
+Plug 'https://github.com/StanAngeloff/php.vim'
+
+" Rust
+Plug 'rust-lang/rust.vim'
+
+" Scala
 Plug 'https://github.com/derekwyatt/vim-scala'
 
-" Add plugins to &runtimepath
+" TOML
+Plug 'cespare/vim-toml'
+
 call plug#end()
 
+"Spell checking
+autocmd BufRead,BufNewFile *.md,*.txt setlocal spell spelllang=en_us
+
+" Keep undo history across sessions by storing it in a file
+try
+  set undodir=/home/herman/.vim_undo
+  set undofile
+catch
+endtry
 
 " Enable 'true colors': 24-bit colors like MacVim / GVim
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
