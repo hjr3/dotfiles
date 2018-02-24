@@ -34,13 +34,22 @@ autocmd BufRead,BufNewFile *.md,*.txt setlocal spell spelllang=en_us
 
 " Keep undo history across sessions by storing it in a file
 try
-  set undodir=/home/herman/.vim_undo
+  if has("unix")
+    let s:uname = system("uname -s")
+    if s:uname == "Darwin\n"
+      set undodir=/Users/herman/.vim_undo
+    else
+      set undodir=/home/herman/.vim_undo
+    endif
+  endif
   set undofile
 catch
 endtry
 
 " Enable 'true colors': 24-bit colors like MacVim / GVim
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+" Show buffers in airline
+let g:airline#extensions#tabline#enabled = 1
 " Enable syntax highlighting
 syntax on
 " Display line numbers
