@@ -25,6 +25,10 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # so rust openssl crate can find the openssl installed by homebrew
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig/:$PKG_CONFIG_PATH"
 
+# gcloud
+export PATH="$HOME/bin/google-cloud-sdk/bin:$PATH"
+
 alias vi='nvim'
 alias vim='nvim'
 alias grep='echo "Use rg!"'
+alias ls='exa'
