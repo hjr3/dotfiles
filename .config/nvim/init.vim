@@ -27,6 +27,9 @@ Plug 'https://github.com/derekwyatt/vim-scala'
 " TOML
 Plug 'cespare/vim-toml'
 
+" FZF
+Plug '/usr/local/opt/fzf'
+
 call plug#end()
 
 "Spell checking

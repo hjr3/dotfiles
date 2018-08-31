@@ -28,7 +28,11 @@ export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig/:$PKG_CONFIG_PATH"
 # gcloud
 export PATH="$HOME/bin/google-cloud-sdk/bin:$PATH"
 
+# fzf auto completion and key bindings
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 alias vi='nvim'
 alias vim='nvim'
 alias grep='echo "Use rg!"'
 alias ls='exa'
+alias cat='bat --paging=always'
