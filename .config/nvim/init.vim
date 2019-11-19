@@ -53,10 +53,8 @@ Plug 'w0rp/ale'
 " Lint when you file is saved. Current linters only support files on disk.
 let g:ale_lint_on_save=1
 let g:ale_lint_on_text_changed = 0
-" Linters
-let g:ale_linters={'rust': ['cargo'], 'javascript': ['eslint']}
-let b:ale_fixers = {'javascript': ['eslint'], 'typescript': ['eslint']}
-let g:ale_typescript_tslint_executable = 'eslint'
+let g:ale_linters={'rust': ['cargo'], 'javascript': ['eslint'], 'typescript': ['eslint', 'tsserver']}
+let g:ale_fixers = {'javascript': ['eslint'], 'typescript': ['eslint']}
 
 let g:ale_type_map = {'eslint': {'E': 'ES', 'W': 'WS'}}
 
@@ -126,15 +124,20 @@ autocmd FileType cucumber setlocal tabstop=8
 autocmd FileType cucumber setlocal softtabstop=4
 autocmd FileType cucumber setlocal shiftwidth=4
 
-autocmd FileType html setlocal expandtab
-autocmd FileType html setlocal tabstop=2
-autocmd FileType html setlocal softtabstop=2
-autocmd FileType html setlocal shiftwidth=2
+"autocmd FileType html setlocal expandtab
+"autocmd FileType html setlocal tabstop=2
+"autocmd FileType html setlocal softtabstop=2
+"autocmd FileType html setlocal shiftwidth=2
 
 autocmd FileType javscript setlocal expandtab
 autocmd FileType javscript setlocal tabstop=2
 autocmd FileType javscript setlocal softtabstop=2
 autocmd FileType javscript setlocal shiftwidth=2
+
+autocmd FileType javscript.jsx setlocal expandtab
+autocmd FileType javscript.jsx setlocal tabstop=2
+autocmd FileType javscript.jsx setlocal softtabstop=2
+autocmd FileType javscript.jsx setlocal shiftwidth=2
 
 autocmd FileType json setlocal expandtab
 autocmd FileType json setlocal tabstop=4
