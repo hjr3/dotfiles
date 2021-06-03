@@ -1,7 +1,19 @@
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 export EDITOR=nvim
 
-export PS1='\u@\h \w !! '
+if [ -n "$ZSH_VERSION" ]; then
+  export PROMPT='%n@%m %~ !! '
+elif [ -n "$BASH_VERSION" ]; then
+  export PS1='\u@\h \w !! '
+fi
+
+# fzf auto completion and key bindings
+if [ -n "$ZSH_VERSION" ]; then
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+elif [ -n "$BASH_VERSION" ]; then
+  [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+fi
+
 export AUTHOR="Herman J. Radtke III"
 
 export PATH=~/bin:/usr/local/git/bin:$PATH
@@ -27,9 +39,6 @@ export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig/:$PKG_CONFIG_PATH"
 
 # gcloud
 export PATH="$HOME/bin/google-cloud-sdk/bin:$PATH"
-
-# fzf auto completion and key bindings
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 alias vi='nvim'
 alias vim='nvim'
