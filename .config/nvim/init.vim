@@ -32,6 +32,7 @@ Plug 'https://github.com/StanAngeloff/php.vim'
 
 " Rust
 Plug 'rust-lang/rust.vim'
+let g:rustfmt_autosave = 1
 
 " Scala
 Plug 'https://github.com/derekwyatt/vim-scala'
