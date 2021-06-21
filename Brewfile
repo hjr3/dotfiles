@@ -12,9 +12,9 @@ brew "git"
 brew "jq"
 brew "neovim"
 brew "node@12", link: true
-brew "postgresql@11"
+brew "postgresql@11", link: true
 brew "ripgrep"
-brew "terraform@0.12", link: true
+brew "tfenv"
 cask "iterm2"
 cask "licecap"
 cask "ngrok"
