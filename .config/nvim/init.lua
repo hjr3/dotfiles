@@ -87,7 +87,7 @@ vim.api.nvim_command('highlight ALEStyleWarningSign ctermbg=NONE ctermfg=yellow'
 paq {'reasonml-editor/vim-reason-plus'}
 
 -- Keep undo history across sessions by storing it in a file
-opt.undodir = '~/.vim_undo'
+opt.undodir = os.getenv('HOME') .. '/.vim_undo'
 opt.undofile = true
 
 -- Enable 'true colors': 24-bit colors like MacVim / GVim
