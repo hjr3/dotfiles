@@ -61,14 +61,17 @@ paq {'w0rp/ale'}
 -- Lint when your file is saved. Current linters only support files on disk.
 g.ale_lint_on_save = 1
 g.ale_lint_on_text_changed = 0
+g.ale_fix_on_save = 1
 g.ale_linters = {
   rust = {'cargo'},
   javascript = {'eslint'},
-  typescript = {'eslint', 'tsserver'}
+  typescript = {'eslint'},
+  typescriptreact = {'eslint'},
 }
 g.ale_fixers = {
-  javascript = {'eslint'},
-  typescript = {'eslint'}
+  javascript = {'prettier'},
+  typescript = {'prettier'},
+  typescriptreact = {'prettier'},
 }
 
 g.ale_type_map = {
