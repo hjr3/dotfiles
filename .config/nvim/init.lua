@@ -65,8 +65,8 @@ g.ale_fix_on_save = 1
 g.ale_linters = {
   rust = {'cargo'},
   javascript = {'eslint'},
-  typescript = {'eslint'},
-  typescriptreact = {'eslint'},
+  typescript = {'eslint', 'tsserver'},
+  typescriptreact = {'eslint', 'tsserver'},
 }
 g.ale_fixers = {
   javascript = {'prettier'},
