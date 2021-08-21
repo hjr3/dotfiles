@@ -40,6 +40,10 @@ export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig/:$PKG_CONFIG_PATH"
 # gcloud
 export PATH="$HOME/bin/google-cloud-sdk/bin:$PATH"
 
+# nvm
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
 alias vi='nvim'
 alias vim='nvim'
 alias grep='echo "Use rg!"'

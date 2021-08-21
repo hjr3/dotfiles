@@ -11,7 +11,7 @@ brew "fzf"
 brew "git"
 brew "jq"
 brew "neovim"
-brew "node@12", link: true
+brew "nvm"
 brew "postgresql@11", link: true
 brew "ripgrep"
 brew "tfenv"
