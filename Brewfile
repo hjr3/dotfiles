@@ -1,3 +1,4 @@
+tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-versions"
@@ -9,10 +10,11 @@ brew "diff-so-fancy"
 brew "exa"
 brew "fzf"
 brew "git"
+brew "heroku"
 brew "jq"
 brew "neovim"
 brew "nvm"
-brew "postgresql@11", link: true
+brew "postgresql@13", link: true
 brew "ripgrep"
 brew "tfenv"
 cask "iterm2"
