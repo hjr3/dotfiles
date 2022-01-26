@@ -42,7 +42,7 @@ export PATH="$HOME/bin/google-cloud-sdk/bin:$PATH"
 
 # nvm
 export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+source $(/opt/homebrew/bin/brew --prefix nvm)/nvm.sh
 
 alias vi='nvim'
 alias vim='nvim'
@@ -50,3 +50,6 @@ alias grep='echo "Use rg!"'
 alias ls='exa'
 alias cat='bat --paging=always'
 alias git-branch-delete="git branch --merged | rg -v '(\*|\+)' | xargs -r git branch -d"
+
+#homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
