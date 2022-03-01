@@ -2,62 +2,54 @@ local cmd = vim.cmd
 local fn = vim.fn
 local g = vim.g
 local opt = vim.opt
+local keymap = vim.api.nvim_set_keymap
 
-cmd 'packadd paq-nvim'
-local paq = require('paq-nvim').paq
+require "paq" {
+  'saveq/paq-nvim';
+  'vim-airline/vim-airline';
+  'bronson/vim-trailing-whitespace';
+  -- Install the gruvbox color scheme.
+  'morhetz/gruvbox';
+  -- Cap'N Proto
+  'cstrahan/vim-capnp';
+  -- Handlebars (and mustache)
+  'mustache/vim-mustache-handlebars';
+  -- Javascript
+  'pangloss/vim-javascript';
+  -- JSX
+  'mxw/vim-jsx';
+  -- JSON
+  'leshill/vim-json';
+  -- Markdown
+  'tpope/vim-markdown';
+  -- PHP
+  'StanAngeloff/php.vim';
+  -- Rust
+  'rust-lang/rust.vim';
+  -- Scala
+  'derekwyatt/vim-scala';
+  -- Terraform
+  'hashivim/vim-terraform';
+  -- Typescript syntax highlighting
+  'HerringtonDarkholme/yats.vim';
+  -- TOML
+  'cespare/vim-toml';
+  -- Async Linting Engine
+  'w0rp/ale';
+  'reasonml-editor/vim-reason-plus';
 
-paq {'saveq/paq-nvim', opt = true}
-paq {'vim-airline/vim-airline'}
+  -- coc
+  { 'neoclide/coc.nvim', branch = 'release' };
+}
+
 -- Show buffers in airline
 g['airline#extensions#tabline#enabled'] = 1
 
-paq {'bronson/vim-trailing-whitespace'}
-
--- Install the gruvbox color scheme.
-paq {'morhetz/gruvbox'}
-
--- Cap'N Proto
-paq {'cstrahan/vim-capnp'}
-
--- Handlebars (and mustache)
-paq {'mustache/vim-mustache-handlebars'}
-
--- Javascript
-paq {'pangloss/vim-javascript'}
-
--- JSX
-paq {'mxw/vim-jsx'}
-
--- JSON
-paq {'leshill/vim-json'}
-
--- Markdown
-paq {'tpope/vim-markdown'}
-
--- PHP
-paq {'StanAngeloff/php.vim'}
-
--- Rust
-paq {'rust-lang/rust.vim'}
 g.rustfmt_autosave = 1
-
--- Scala
-paq {'derekwyatt/vim-scala'}
-
--- Terraform
-paq {'hashivim/vim-terraform'}
-
--- Typescript syntax highlighting
-paq {'HerringtonDarkholme/yats.vim'}
-
--- TOML
-paq {'cespare/vim-toml'}
 
 -- FZF
 opt.runtimepath:append('/usr/local/opt/fzf')
 
--- Async Linting Engine
-paq {'w0rp/ale'}
 -- Lint when your file is saved. Current linters only support files on disk.
 g.ale_lint_on_save = 1
 g.ale_lint_on_text_changed = 0
@@ -87,8 +79,6 @@ vim.api.nvim_command('highlight ALEWarningSign ctermbg=NONE ctermfg=yellow')
 vim.api.nvim_command('highlight ALEStyleErrorSign ctermbg=NONE ctermfg=darkyellow')
 vim.api.nvim_command('highlight ALEStyleWarningSign ctermbg=NONE ctermfg=yellow')
 
-paq {'reasonml-editor/vim-reason-plus'}
-
 -- Keep undo history across sessions by storing it in a file
 opt.undodir = os.getenv('HOME') .. '/.vim_undo'
 opt.undofile = true
@@ -112,9 +102,9 @@ opt.tabstop = 8
 -- Insert spaces when <tab> is pressed.
 opt.expandtab = true
 
-g['gruvbox_contrast_dark'] = 'hard'
-vim.api.nvim_command('colorscheme gruvbox')
 opt.background = 'dark'
+g['gruvbox_contrast_dark'] = 'soft'
+vim.api.nvim_command('colorscheme gruvbox')
 
 -- Do not use settings suggested by PEP8.
 -- setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=8
@@ -176,3 +166,8 @@ cmd 'autocmd FileType ruby setlocal expandtab'
 cmd 'autocmd FileType ruby setlocal tabstop=2'
 cmd 'autocmd FileType ruby setlocal softtabstop=2'
 cmd 'autocmd FileType ruby setlocal shiftwidth=2'
+
+-- coc mappings
+-- for typescript do:  `:CocInstall coc-tsserver`
+keymap('n', '<leader>d', '<plug>(coc-definition)', {})
+keymap('n', '<leader>r', '<plug>(coc-references-used)', {})
