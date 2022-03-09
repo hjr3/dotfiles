@@ -27,6 +27,8 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Hom
 
 
 pathadd "/usr/local/heroku/bin"
+
+source $HOME/.cargo/env
 pathadd "$HOME/.cargo/bin"
 
 # so rust openssl crate can find the openssl installed by homebrew
