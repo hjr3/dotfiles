@@ -37,14 +37,20 @@ export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig/:$PKG_CONFIG_PATH"
 pathadd "$HOME/bin/google-cloud-sdk/bin"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f "/Users/${USER}/bin/google-cloud-sdk/path.zsh.inc" ]; then . "/Users/${USER}/bin/google-cloud-sdk/path.zsh.inc"; fi
+if [ -f "/Users/${USER}/bin/google-cloud-sdk/path.zsh.inc" ]; then
+  source "/Users/${USER}/bin/google-cloud-sdk/path.zsh.inc"
+fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f "/Users/${USER}/bin/google-cloud-sdk/completion.zsh.inc" ]; then . "/Users/${USER}/bin/google-cloud-sdk/completion.zsh.inc"; fi
+if [ -f "/Users/${USER}/bin/google-cloud-sdk/completion.zsh.inc" ]; then
+  source "/Users/${USER}/bin/google-cloud-sdk/completion.zsh.inc"
+fi
 
-# fzf auto completion and key bindings
-source $(/opt/homebrew/bin/brew --prefix fzf)/shell/completion.zsh
-source $(/opt/homebrew/bin/brew --prefix fzf)/shell/key-bindings.zsh
+if [ -n "${BREW_PATH}" ]; then
+  # fzf auto completion and key bindings
+  source $($BREW_PATH --prefix fzf)/shell/completion.zsh
+  source $($BREW_PATH --prefix fzf)/shell/key-bindings.zsh
+fi
 
 alias vi='nvim'
 alias vim='nvim'
