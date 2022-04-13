@@ -73,3 +73,6 @@ if [[ -d "$INC_DIR" && -r "$INC_DIR" && -x "$INC_DIR" ]]; then
     [[ -f "$file" && -r "$file" ]] && source "$file"
   done
 fi
+
+# switch zsh back to emacs mode
+bindkey -e
