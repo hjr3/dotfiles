@@ -54,7 +54,6 @@ fi
 
 alias vi='nvim'
 alias vim='nvim'
-alias grep='echo "Use rg!"'
 alias ls='exa'
 alias cat='bat --paging=always'
 alias git-branch-delete="git branch --merged | rg -v '(\*|\+)' | xargs -r git branch -d"
