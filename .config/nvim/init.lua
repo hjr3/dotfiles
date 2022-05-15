@@ -37,9 +37,11 @@ require "paq" {
   -- Async Linting Engine
   'w0rp/ale';
   'reasonml-editor/vim-reason-plus';
-
   -- coc
   { 'neoclide/coc.nvim', branch = 'release' };
+
+  -- fzf vim support
+  'junegunn/fzf.vim';
 }
 
 -- Show buffers in airline
@@ -171,3 +173,6 @@ cmd 'autocmd FileType ruby setlocal shiftwidth=2'
 -- for typescript do:  `:CocInstall coc-tsserver`
 keymap('n', '<leader>d', '<plug>(coc-definition)', {})
 keymap('n', '<leader>r', '<plug>(coc-references-used)', {})
+
+-- fzf mappings
+keymap('n', '<leader>b', ':Buffers<Space>', {})
