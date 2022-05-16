@@ -3,6 +3,8 @@
 
 # Track these files
 # Use `git ls-tree -r main --name-only` to list all tracked files
+.config/iterm2/iterm2.json
+.config/iterm2/solarized-dark.itermcolors
 .config/nvim/.gitignore
 .config/nvim/ftdetect/php.vim
 .config/nvim/ftplugin/cucumber.vim

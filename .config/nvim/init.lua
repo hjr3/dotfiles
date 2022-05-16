@@ -41,6 +41,7 @@ require "paq" {
   { 'neoclide/coc.nvim', branch = 'release' };
 
   -- fzf vim support
+  'junegunn/fzf';
   'junegunn/fzf.vim';
 }
 
@@ -48,9 +49,6 @@ require "paq" {
 g['airline#extensions#tabline#enabled'] = 1
 
 g.rustfmt_autosave = 1
-
--- FZF
-opt.runtimepath:append('/usr/local/opt/fzf')
 
 -- Lint when your file is saved. Current linters only support files on disk.
 g.ale_lint_on_save = 1
@@ -67,7 +65,6 @@ g.ale_fixers = {
   typescript = {'prettier'},
   typescriptreact = {'prettier'},
 }
-
 g.ale_type_map = {
   eslint = {E = 'ES', W = 'WS'}
 }
@@ -175,4 +172,4 @@ keymap('n', '<leader>d', '<plug>(coc-definition)', {})
 keymap('n', '<leader>r', '<plug>(coc-references-used)', {})
 
 -- fzf mappings
-keymap('n', '<leader>b', ':Buffers<Space>', {})
+keymap('n', '<leader>b', ':Buffers<CR>', { silent = true })
