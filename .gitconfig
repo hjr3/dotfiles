@@ -12,3 +12,5 @@
     path = ~/Code/narvar/.gitconfig.inc
 [merge]
     conflictstyle = diff3
+[init]
+    defaultBranch = main
