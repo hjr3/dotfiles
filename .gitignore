@@ -1,3 +1,37 @@
-!/.ssh
-/.ssh/*
-!/.ssh/config
+# Ignore everything
+*
+
+# Track these files
+# Use `git ls-tree -r main --name-only` to list all tracked files
+.config/nvim/.gitignore
+.config/nvim/ftdetect/php.vim
+.config/nvim/ftplugin/cucumber.vim
+.config/nvim/ftplugin/php.vim
+.config/nvim/ftplugin/rust.vim
+.config/nvim/init.lua
+.gitconfig
+.gitignore
+.iterm2/gruvbox.itermcolors
+.iterm2/iterm2.json
+.iterm2/solarized-dark.itermcolors
+.ssh/config
+.tmux.conf
+.vim/README.md
+.vim/ftdetect/mustache.vim
+.vim/ftdetect/php.vim
+.vim/ftplugin/c.vim
+.vim/ftplugin/cucumber.vim
+.vim/ftplugin/html.vim
+.vim/ftplugin/javascript.vim
+.vim/ftplugin/json.vim
+.vim/ftplugin/markdown.vim
+.vim/ftplugin/php.vim
+.vim/ftplugin/ruby.vim
+.vim/ftplugin/rust.vim
+.vim/plugin/php/php-doc.vim
+.vimrc
+.zprofile
+.zshrc
+Brewfile
+Brewfile.lock.json
+README.md
