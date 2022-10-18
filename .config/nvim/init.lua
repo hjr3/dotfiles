@@ -33,7 +33,7 @@ require "paq" {
   -- Typescript syntax highlighting
   'HerringtonDarkholme/yats.vim';
   -- TOML
-  'cespare/vim-toml';
+  { 'cespare/vim-toml', branch = 'main' };
   -- Async Linting Engine
   'w0rp/ale';
   'reasonml-editor/vim-reason-plus';
