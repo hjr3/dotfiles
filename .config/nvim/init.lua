@@ -171,5 +171,10 @@ cmd 'autocmd FileType ruby setlocal shiftwidth=2'
 keymap('n', '<leader>d', '<plug>(coc-definition)', {})
 keymap('n', '<leader>r', '<plug>(coc-references-used)', {})
 
+-- remap <cr> to make it confirm CoC completion
+keymap('i', '<CR>', "coc#pum#visible() ? coc#pum#confirm() : '<CR>'", { noremap = true, expr = true })
+-- select the first completion item and confirm the completion when no item has been selected
+keymap('i', '<CR>', "coc#pum#visible() ? coc#_select_confirm() : '<C-g>u<CR>'", { noremap = true, expr = true, silent = true })
+
 -- fzf mappings
 keymap('n', '<leader>b', ':Buffers<CR>', { silent = true })
