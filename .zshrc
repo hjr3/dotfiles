@@ -25,7 +25,6 @@ export EC2_HOME=~/.ec2
 pathadd "$EC2_HOME/bin"
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home
 
-
 pathadd "/usr/local/heroku/bin"
 
 source $HOME/.cargo/env
@@ -61,10 +60,6 @@ alias git-branch-delete="git branch --merged | rg -v '(\*|\+)' | xargs -r git br
 # reverse search
 bindkey -v
 bindkey '^R' history-incremental-search-backward
-
-# Make forward/backward word behavior like bash
-autoload -U select-word-style
-select-word-style bash
 
 INC_DIR="$HOME/.zshrc.d"
 if [[ -d "$INC_DIR" && -r "$INC_DIR" && -x "$INC_DIR" ]]; then
