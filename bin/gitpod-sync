@@ -1,0 +1,22 @@
+#!/bin/bash
+
+SRC="${PWD}/.rsync-include"
+HOST=$1
+DEST=$(basename "$PWD")
+
+if [[ ! -f "${SRC}" ]] ; then
+    echo "Include file not found: ${SRC}"
+    exit 1
+fi
+
+if [[ -z "${HOST}" ]]; then
+  echo "Host not found"
+  exit 1
+fi
+
+function __sync () {
+  rsync --archive --recursive --compress --progress --files-from="${SRC}" "${PWD}" "${HOST}":/workspace/"${DEST}"
+}
+
+
+__sync; fswatch -o . | while read -r; do __sync; done

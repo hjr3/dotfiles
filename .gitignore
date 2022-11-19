@@ -20,3 +20,4 @@
 Brewfile
 Brewfile.lock.json
 README.md
+bin/gitpod-sync
