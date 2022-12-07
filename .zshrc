@@ -61,6 +61,10 @@ alias git-branch-delete="git branch --merged | rg -v '(\*|\+)' | xargs -r git br
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 
+# Make forward/backward word behavior like bash
+autoload -Uz select-word-style
+select-word-style bash
+
 INC_DIR="$HOME/.zshrc.d"
 if [[ -d "$INC_DIR" && -r "$INC_DIR" && -x "$INC_DIR" ]]; then
   for file in "$INC_DIR"/*; do
