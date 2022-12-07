@@ -70,3 +70,6 @@ fi
 
 # switch zsh back to emacs mode
 bindkey -e
+
+# add default node version to path
+pathadd "$HOME/.nvm/versions/node/v16.14.2/bin"
