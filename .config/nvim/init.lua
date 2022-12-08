@@ -1,9 +1,3 @@
-local cmd = vim.cmd
-local fn = vim.fn
-local g = vim.g
-local opt = vim.opt
-local keymap = vim.api.nvim_set_keymap
-
 require "paq" {
   'saveq/paq-nvim';
   'vim-airline/vim-airline';
@@ -46,125 +40,119 @@ require "paq" {
 }
 
 -- Show buffers in airline
-g['airline#extensions#tabline#enabled'] = 1
+vim.g['airline#extensions#tabline#enabled'] = 1
 
-g.rustfmt_autosave = 1
+vim.g.rustfmt_autosave = 1
 
 -- Lint when your file is saved. Current linters only support files on disk.
-g.ale_lint_on_save = 1
-g.ale_lint_on_text_changed = 0
-g.ale_fix_on_save = 1
-g.ale_linters = {
+vim.g.ale_lint_on_save = 1
+vim.g.ale_lint_on_text_changed = 0
+vim.g.ale_fix_on_save = 1
+vim.g.ale_linters = {
   rust = {'cargo'},
   javascript = {'eslint'},
   typescript = {'eslint', 'tsserver'},
   typescriptreact = {'eslint', 'tsserver'},
 }
-g.ale_fixers = {
+vim.g.ale_fixers = {
   javascript = {'prettier'},
   typescript = {'prettier'},
   typescriptreact = {'prettier'},
 }
-g.ale_type_map = {
+vim.g.ale_type_map = {
   eslint = {E = 'ES', W = 'WS'}
 }
 
-g.ale_sign_error = '✘'
-g.ale_sign_warning = '⚠'
-g.ale_sign_style_error = '>>'
-g.ale_sign_style_warning = '--'
+vim.g.ale_sign_error = '✘'
+vim.g.ale_sign_warning = '⚠'
+vim.g.ale_sign_style_error = '>>'
+vim.g.ale_sign_style_warning = '--'
 vim.api.nvim_command('highlight ALEErrorSign ctermbg=NONE ctermfg=red')
 vim.api.nvim_command('highlight ALEWarningSign ctermbg=NONE ctermfg=yellow')
 vim.api.nvim_command('highlight ALEStyleErrorSign ctermbg=NONE ctermfg=darkyellow')
 vim.api.nvim_command('highlight ALEStyleWarningSign ctermbg=NONE ctermfg=yellow')
 
 -- Keep undo history across sessions by storing it in a file
-opt.undodir = os.getenv('HOME') .. '/.vim_undo'
-opt.undofile = true
+vim.opt.undodir = os.getenv('HOME') .. '/.vim_undo'
+vim.opt.undofile = true
 
 -- Enable 'true colors': 24-bit colors like MacVim / GVim
 vim.api.nvim_command('let $NVIM_TUI_ENABLE_TRUE_COLOR=1')
 -- Enable syntax highlighting
 vim.api.nvim_command('syntax on')
 -- Display line numbers
-opt.number = true
+vim.opt.number = true
 -- Use the system clipboard.
 vim.api.nvim_command('set clipboard+=unnamedplus')
 -- Allow switching to buffers with unsaved changes.
-opt.hidden = true
+vim.opt.hidden = true
 -- Display a ruler at the current `textwidth` (hard limit)
 vim.api.nvim_command('set colorcolumn=+0')
 -- How many columns of indentation per shift.
-opt.shiftwidth = 2
+vim.opt.shiftwidth = 2
 -- How many columns an actual <tab> character will take up.
-opt.tabstop = 8
+vim.opt.tabstop = 8
 -- Insert spaces when <tab> is pressed.
-opt.expandtab = true
+vim.opt.expandtab = true
 
-opt.background = 'dark'
-g['gruvbox_contrast_dark'] = 'soft'
+vim.opt.background = 'dark'
+vim.g['gruvbox_contrast_dark'] = 'soft'
 vim.api.nvim_command('colorscheme gruvbox')
 
 -- Do not use settings suggested by PEP8.
 -- setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=8
-g['python_recommended_style'] = 0
+vim.g['python_recommended_style'] = 0
 
 -- Spell checking
-cmd 'autocmd BufRead,BufNewFile *.md,*.txt setlocal spell spelllang=en_us'
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown,txt",
+  callback = function()
+    vim.api.nvim_set_option_value("spell", true, { scope = "local" })
+    vim.api.nvim_set_option_value("spelllang", "en_us", { scope = "local" })
+  end,
+})
 
-cmd 'autocmd FileType c setlocal tabstop=8'
-cmd 'autocmd FileType c setlocal softtabstop=4'
-cmd 'autocmd FileType c setlocal shiftwidth=4'
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "c,cucumber,php",
+  callback = function()
+    vim.api.nvim_set_option_value("expandtab", true, { scope = "local" })
+    vim.api.nvim_set_option_value("tabstop", 8, { scope = "local" })
+    vim.api.nvim_set_option_value("softtabstop", 4, { scope = "local" })
+    vim.api.nvim_set_option_value("shiftwidth", 4, { scope = "local" })
+  end,
+})
 
-cmd 'autocmd FileType cucumber setlocal expandtab'
-cmd 'autocmd FileType cucumber setlocal tabstop=8'
-cmd 'autocmd FileType cucumber setlocal softtabstop=4'
-cmd 'autocmd FileType cucumber setlocal shiftwidth=4'
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "json",
+  callback = function()
+    vim.api.nvim_set_option_value("expandtab", true, { scope = "local" })
+    vim.api.nvim_set_option_value("tabstop", 4, { scope = "local" })
+    vim.api.nvim_set_option_value("softtabstop", 4, { scope = "local" })
+    vim.api.nvim_set_option_value("shiftwidth", 4, { scope = "local" })
+  end,
+})
 
--- cmd 'autocmd FileType html setlocal expandtab'
--- cmd 'autocmd FileType html setlocal tabstop=2'
--- cmd 'autocmd FileType html setlocal softtabstop=2'
--- cmd 'autocmd FileType html setlocal shiftwidth=2'
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.api.nvim_set_option_value("expandtab", true, { scope = "local" })
+    vim.api.nvim_set_option_value("tabstop", 3, { scope = "local" })
+    vim.api.nvim_set_option_value("softtabstop", 3, { scope = "local" })
+    vim.api.nvim_set_option_value("shiftwidth", 3, { scope = "local" })
+  end,
+})
 
-cmd 'autocmd FileType javscript setlocal expandtab'
-cmd 'autocmd FileType javscript setlocal tabstop=2'
-cmd 'autocmd FileType javscript setlocal softtabstop=2'
-cmd 'autocmd FileType javscript setlocal shiftwidth=2'
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "javascript,javascript.jsx,python,reason,ruby",
+  callback = function()
+    vim.api.nvim_set_option_value("expandtab", true, { scope = "local" })
+    vim.api.nvim_set_option_value("tabstop", 2, { scope = "local" })
+    vim.api.nvim_set_option_value("softtabstop", 2, { scope = "local" })
+    vim.api.nvim_set_option_value("shiftwidth", 2, { scope = "local" })
+  end,
+})
 
-cmd 'autocmd FileType javscript.jsx setlocal expandtab'
-cmd 'autocmd FileType javscript.jsx setlocal tabstop=2'
-cmd 'autocmd FileType javscript.jsx setlocal softtabstop=2'
-cmd 'autocmd FileType javscript.jsx setlocal shiftwidth=2'
-
-cmd 'autocmd FileType json setlocal expandtab'
-cmd 'autocmd FileType json setlocal tabstop=4'
-cmd 'autocmd FileType json setlocal softtabstop=4'
-cmd 'autocmd FileType json setlocal shiftwidth=4'
-
-cmd 'autocmd FileType markdown setlocal expandtab'
-cmd 'autocmd FileType markdown setlocal tabstop=3'
-cmd 'autocmd FileType markdown setlocal softtabstop=3'
-cmd 'autocmd FileType markdown setlocal shiftwidth=3'
-
-cmd 'autocmd FileType php setlocal expandtab'
-cmd 'autocmd FileType php setlocal tabstop=8'
-cmd 'autocmd FileType php setlocal softtabstop=4'
-cmd 'autocmd FileType php setlocal shiftwidth=4'
-
-cmd 'autocmd FileType python setlocal expandtab'
-cmd 'autocmd FileType python setlocal tabstop=2'
-cmd 'autocmd FileType python setlocal softtabstop=2'
-cmd 'autocmd FileType python setlocal shiftwidth=2'
-
-cmd 'autocmd FileType reason setlocal expandtab'
-cmd 'autocmd FileType reason setlocal tabstop=2'
-cmd 'autocmd FileType reason setlocal softtabstop=2'
-cmd 'autocmd FileType reason setlocal shiftwidth=2'
-
-cmd 'autocmd FileType ruby setlocal expandtab'
-cmd 'autocmd FileType ruby setlocal tabstop=2'
-cmd 'autocmd FileType ruby setlocal softtabstop=2'
-cmd 'autocmd FileType ruby setlocal shiftwidth=2'
+local keymap = vim.api.nvim_set_keymap
 
 -- coc mappings
 -- for typescript do:  `:CocInstall coc-tsserver`
