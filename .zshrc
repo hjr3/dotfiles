@@ -77,3 +77,7 @@ bindkey -e
 
 # add default node version to path
 pathadd "$HOME/.nvm/versions/node/v16.14.2/bin"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
