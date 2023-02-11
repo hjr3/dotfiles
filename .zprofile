@@ -6,12 +6,11 @@ elif [ -s /usr/local/bin/brew ]; then
 fi
 
 if [ -n "${BREW_PATH}" ]; then
-  # nvm
-  export NVM_DIR=~/.nvm
-  source $(${BREW_PATH} --prefix nvm)/nvm.sh --no-use
-
   #homebrew
   eval "$(${BREW_PATH} shellenv)"
+
+  # fnm
+  eval "$(fnm env)"
 fi;
 
 if [ -d $HOME/.jenv/bin ]; then
