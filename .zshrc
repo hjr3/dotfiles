@@ -5,8 +5,11 @@ export PROMPT='%n@%m %~ !! '
 
 export AUTHOR="Herman J. Radtke III"
 
-export HISTSIZE=10000
-export HISTFILESIZE=100000
+export HISTSIZE=100000
+export SAVEHIST=$HISTSIZE
+
+# prevent history from recording duplicated entries
+setopt hist_ignore_all_dups
 
 if [ -d "~/.aws" ]; then
   source ~/.aws
