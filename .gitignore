@@ -6,12 +6,11 @@
 .config/iterm2/README.md
 .config/iterm2/iterm2.json
 .config/iterm2/solarized-dark.itermcolors
-.config/nvim/.gitignore
-.config/nvim/ftdetect/php.vim
-.config/nvim/ftplugin/cucumber.vim
-.config/nvim/ftplugin/php.vim
-.config/nvim/ftplugin/rust.vim
+.config/nvim/.stylua.toml
 .config/nvim/init.lua
+.config/nvim/lua/custom/plugins/init.lua
+.config/nvim/lua/kickstart/plugins/autoformat.lua
+.config/nvim/lua/kickstart/plugins/debug.lua
 .gitconfig
 .gitignore
 .ssh/config
