@@ -1,22 +1,4 @@
 # Ignore everything
 *
 
-# Track these files
-# Use `git ls-tree -r main --name-only` to list all tracked files
-.config/iterm2/README.md
-.config/iterm2/iterm2.json
-.config/iterm2/solarized-dark.itermcolors
-.config/nvim/.stylua.toml
-.config/nvim/init.lua
-.config/nvim/lua/custom/plugins/init.lua
-.config/nvim/lua/kickstart/plugins/autoformat.lua
-.config/nvim/lua/kickstart/plugins/debug.lua
-.gitconfig
-.gitignore
-.ssh/config
-.zprofile
-.zshrc
-Brewfile
-Brewfile.lock.json
-README.md
-bin/gitpod-sync
+# Manually add files we want to track
