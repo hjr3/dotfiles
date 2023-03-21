@@ -26,7 +26,6 @@ pathadd "$HOME/bin"
 
 export EC2_HOME=~/.ec2
 pathadd "$EC2_HOME/bin"
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home
 
 pathadd "/usr/local/heroku/bin"
 
@@ -80,7 +79,3 @@ bindkey -e
 
 # add default node version to path
 pathadd "$HOME/.nvm/versions/node/v16.14.2/bin"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
