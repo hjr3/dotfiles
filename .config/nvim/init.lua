@@ -380,7 +380,16 @@ end
 --  Add any additional override configuration in the following tables. They will be passed to
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
-  rust_analyzer = {},
+  rust_analyzer = {
+    -- to enable rust-analyzer settings visit:
+    -- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
+    ["rust-analyzer"] = {
+      -- enable clippy on save
+      checkOnSave = {
+        command = "clippy"
+      },
+    }
+  },
   tsserver = {},
   lua_ls = {
     Lua = {
