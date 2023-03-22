@@ -11,6 +11,9 @@ export SAVEHIST=$HISTSIZE
 # prevent history from recording duplicated entries
 setopt hist_ignore_all_dups
 
+# share history between sessions
+setopt inc_append_history
+
 if [ -d "~/.aws" ]; then
   source ~/.aws
 fi
