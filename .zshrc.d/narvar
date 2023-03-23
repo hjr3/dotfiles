@@ -19,3 +19,8 @@ export GPG_TTY=$(tty)
 # note: we do not use $(brew --prefix sdkman-cli) because it is slow
 export SDKMAN_DIR="${BREW_PREFIX}/opt/sdkman-cli/libexec"
 [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
+
+export HOMEBREW_BUNDLE_FILE="${HOME}"/.config/narvar/Brewfile
+
+ARTIFACTORY_ENV=$HOME/.narvar/artifactory.env
+[ -f $ARTIFACTORY_ENV ] && source $ARTIFACTORY_ENV
