@@ -1,8 +1,10 @@
 # homebrew
 if [ -s /opt/homebrew/bin/brew ]; then
-  BREW_PATH="/opt/homebrew/bin/brew"
+  BREW_PREFIX="/opt/homebrew"
+  BREW_PATH="${BREW_PREFIX}/bin/brew"
 elif [ -s /usr/local/bin/brew ]; then
-  BREW_PATH="/usr/local/bin/brew"
+  BREW_PREFIX="/usr/local"
+  BREW_PATH="${BREW_PREFIX}/bin/brew"
 fi
 
 if [ -n "${BREW_PATH}" ]; then
@@ -25,5 +27,7 @@ fi;
 # install them via brew (or manually)
 # use `/usr/libexec/java_home -V` to find the path
 # sdk install java 15.0.2-open /Library/Java/JavaVirtualMachines/adoptopenjdk-15.jdk/Contents/Home
-export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
+
+# note: we do not use $(brew --prefix sdkman-cli) because it is slow
+export SDKMAN_DIR="${BREW_PREFIX}/opt/sdkman-cli/libexec"
 [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
