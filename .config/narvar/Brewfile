@@ -30,7 +30,6 @@ brew "jq"
 brew "kubernetes-cli"
 brew "maven"
 brew "neovim"
-brew "nvm"
 brew "podman"
 brew "postgresql@11", link: true
 brew "redis"
