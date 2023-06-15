@@ -10,10 +10,10 @@ return {
     vim.g.copilot_no_tab_map = true
 
     local map = vim.keymap.set
-    map('i', '<leader>[', '<Plug>(copilot-next)', {})
-    map('i', '<leader>]', '<Plug>(copilot-previous)', {})
+    map('i', '[[', '<Plug>(copilot-next)', {})
+    map('i', ']]', '<Plug>(copilot-previous)', {})
     -- tab still works due to cmp (somehow?)
-    map('i', '<leader>{', 'copilot#Accept("<CR>")', { silent = true, expr = true })
+    map('i', '{{', 'copilot#Accept("<CR>")', { silent = true, expr = true })
 
     vim.g.copilot_filetypes = {
       ["*"] = false,
