@@ -387,6 +387,9 @@ local servers = {
       checkOnSave = {
         command = "clippy"
       },
+      procMacro = {
+        enable = true
+      },
     }
   },
   tsserver = {},
