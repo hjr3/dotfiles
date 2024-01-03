@@ -11,6 +11,6 @@
 [includeIf "gitdir:~/Code/narvar/"]
     path = ~/Code/narvar/.gitconfig.inc
 [merge]
-    conflictstyle = diff3
+    conflictstyle = zdiff3
 [init]
     defaultBranch = main
