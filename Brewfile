@@ -2,9 +2,7 @@
 # https://docs.brew.sh/Manpage#bundle-subcommand
 
 tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "homebrew/cask-versions"
-tap "homebrew/core"
 tap "homebrew/services"
 tap "neovim/neovim"
 brew "bat"
@@ -19,6 +17,7 @@ brew "jq"
 brew "neovim"
 brew "postgresql@13", restart_service: true, link: true
 brew "ripgrep"
+brew "sqlite"
 brew "tfenv"
 brew "wasmtime"
 brew "zola"
