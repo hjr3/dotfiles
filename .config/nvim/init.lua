@@ -369,6 +369,10 @@ local on_attach = function(client, bufnr)
   if client.name == 'tsserver' then
     client.server_capabilities.document_formatting = false
   end
+
+  -- custom
+  -- show error in modal
+  nmap('<leader>se', vim.diagnostic.open_float, '[S]how [E]error')
 end
 
 -- Enable the following language servers
