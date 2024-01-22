@@ -1,16 +1,33 @@
 [user]
     name = Herman J. Radtke III
     email = herman@hermanradtke.com
+
 [color]
     ui = auto
+
 [diff]
     algorithm = patience
+    tool = difftastic
+
+[difftool]
+    prompt = false
+
+[difftool "difftastic"]
+    cmd = difft "$LOCAL" "$REMOTE"
+
 [pager]
     diff = diff-so-fancy | less --tabs=1,5 -RFX
     show = diff-so-fancy | less --tabs=1,5 -RFX
+    difftool = true
+
 [includeIf "gitdir:~/Code/narvar/"]
     path = ~/Code/narvar/.gitconfig.inc
+
 [merge]
     conflictstyle = zdiff3
+
 [init]
     defaultBranch = main
+
+[alias]
+    dft = difftool
