@@ -7,12 +7,12 @@
 return {
   'github/copilot.vim',
   config = function()
-    vim.g.copilot_no_tab_map = true
+    -- disabled this as tab completion for copilot suggestions was not working
+    -- vim.g.copilot_no_tab_map = true
 
     local map = vim.keymap.set
     --map('i', '[[', '<Plug>(copilot-next)', {})
     --map('i', ']]', '<Plug>(copilot-previous)', {})
-    -- tab still works due to cmp (somehow?)
     map('i', '^^', 'copilot#Accept("<CR>")', { silent = true, expr = true })
 
     vim.g.copilot_filetypes = {
