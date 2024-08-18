@@ -17,6 +17,7 @@ return {
       bash = { 'shellcheck' },
     }
     vim.g.ale_fixers = {
+      dart = { 'dart-format' },
       javascript = { 'prettier' },
       typescript = { 'prettier' },
       typescriptreact = { 'prettier' },

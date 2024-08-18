@@ -21,6 +21,7 @@ return {
       ["typescript"] = true,
       ["lua"] = false,
       ["rust"] = true,
+      ["dart"] = true,
     }
   end,
 }

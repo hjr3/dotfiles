@@ -430,6 +430,12 @@ mason_lspconfig.setup_handlers {
   end,
 }
 
+require('lspconfig').dartls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = { 'dart', 'language-server', '--protocol=lsp' },
+})
+
 -- nvim-cmp setup
 --local cmp = require 'cmp'
 --local luasnip = require 'luasnip'
