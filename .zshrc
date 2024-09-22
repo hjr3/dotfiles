@@ -42,7 +42,7 @@ pathadd "$EC2_HOME/bin"
 pathadd "/usr/local/heroku/bin"
 
 source $HOME/.cargo/env
-pathadd "$HOME/.cargo/bin"
+PATH="$HOME/.cargo/bin:$PATH"
 
 # so rust openssl crate can find the openssl installed by homebrew
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig/:$PKG_CONFIG_PATH"
