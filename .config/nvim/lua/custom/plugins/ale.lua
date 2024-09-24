@@ -12,8 +12,8 @@ return {
     vim.g.ale_linters = {
       rust = { 'cargo' },
       javascript = { 'eslint' },
-      typescript = { 'eslint', 'tsserver' },
-      typescriptreact = { 'eslint', 'tsserver' },
+      typescript = { 'eslint', 'ts_ls' },
+      typescriptreact = { 'eslint', 'ts_ls' },
       bash = { 'shellcheck' },
     }
     vim.g.ale_fixers = {

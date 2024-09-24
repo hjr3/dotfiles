@@ -365,8 +365,8 @@ local on_attach = function(client, bufnr)
     vim.lsp.buf.format()
   end, { desc = 'Format current buffer with LSP' })
 
-  -- disable tsserver so it does not conflict with prettier
-  if client.name == 'tsserver' then
+  -- disable ts_ls so it does not conflict with prettier
+  if client.name == 'ts_ls' then
     client.server_capabilities.document_formatting = false
   end
 
@@ -397,7 +397,7 @@ local servers = {
       },
     }
   },
-  tsserver = {},
+  ts_ls = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
