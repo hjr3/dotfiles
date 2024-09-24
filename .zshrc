@@ -23,6 +23,8 @@ setopt inc_append_history
 # remove command lines from the history list when the first character on the line is a space
 setopt hist_ignore_space
 
+export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/ripgrep.conf"
+
 if [ -d "~/.aws" ]; then
   source ~/.aws
 fi
