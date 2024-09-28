@@ -14,11 +14,14 @@ git reset --hard origin/main
 
 ### Jujutsu
 
+_Note:_ This assumes you are not trying to colocate with a git repo.
+
 ```bash
 cd $HOME
 jj git init
 jj git remote add origin git@github.com:hjr3/dotfiles.git
 jj git fetch
+jj branch track main@origin
 jj rebase -d main@origin
 ```
 
