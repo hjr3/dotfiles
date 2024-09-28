@@ -8,6 +8,9 @@ export AUTHOR="Herman J. Radtke III"
 export HISTSIZE=100000
 export SAVEHIST=$HISTSIZE
 
+export XDG_CONFIG_HOME="$HOME/.config"
+export JJ_CONFIG="$XDG_CONFIG_HOME/jj/config.toml"
+
 # fix zsh of tab completion of git commands being slow
 # https://superuser.com/a/459057
 __git_files () {
@@ -23,7 +26,7 @@ setopt inc_append_history
 # remove command lines from the history list when the first character on the line is a space
 setopt hist_ignore_space
 
-export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/ripgrep.conf"
+export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/ripgrep.conf"
 
 if [ -d "~/.aws" ]; then
   source ~/.aws
