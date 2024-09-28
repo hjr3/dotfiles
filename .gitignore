@@ -2,3 +2,26 @@
 *
 
 # Manually add files we want to track
+!.config/iterm2/README.md
+!.config/iterm2/iterm2.json
+!.config/iterm2/solarized-dark.itermcolors
+!.config/nvim/.stylua.toml
+!.config/nvim/init.lua
+!.config/nvim/lazy-lock.json
+!.config/nvim/lua/custom/plugins/ale.lua
+!.config/nvim/lua/custom/plugins/copilot.lua
+!.config/nvim/lua/custom/plugins/flutter.lua
+!.config/nvim/lua/custom/plugins/init.lua
+!.config/nvim/lua/kickstart/plugins/autoformat.lua
+!.config/nvim/lua/kickstart/plugins/debug.lua
+!.config/ripgrep/ripgrep.conf
+!.gitconfig
+!.gitignore
+!.ssh/config
+!.zprofile
+!.zshrc
+!.zshrc.d/narvar
+!Brewfile
+!Brewfile.lock.json
+!README.md
+!bin/gitpod-sync
