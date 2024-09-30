@@ -1,0 +1,6 @@
+[user]
+name = "Herman J. Radtke III"
+email = "herman@hermanradtke.com"
+
+[ui]
+default-command = "log"
