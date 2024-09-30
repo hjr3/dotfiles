@@ -5,6 +5,7 @@
 !.config/iterm2/README.md
 !.config/iterm2/iterm2.json
 !.config/iterm2/solarized-dark.itermcolors
+!.config/jj/config.toml
 !.config/nvim/.stylua.toml
 !.config/nvim/init.lua
 !.config/nvim/lazy-lock.json
