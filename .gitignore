@@ -2,6 +2,9 @@
 *
 
 # Manually add files we want to track
+!.config
+!.config/ghostty
+!.config/ghostty/config
 !.config/iterm2/README.md
 !.config/iterm2/iterm2.json
 !.config/iterm2/solarized-dark.itermcolors

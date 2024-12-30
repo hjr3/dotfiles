@@ -1,3 +1,5 @@
+XDG_CONFIG_HOME=$HOME/.config
+
 # homebrew
 if [ -s /opt/homebrew/bin/brew ]; then
   BREW_PREFIX="/opt/homebrew"

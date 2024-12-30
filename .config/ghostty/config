@@ -1,0 +1,3 @@
+auto-update = off # use Brewfile
+font-family = Menlo
+theme = Solarized Dark - Patched
