@@ -22,6 +22,7 @@ return {
       ["lua"] = false,
       ["rust"] = true,
       ["dart"] = true,
+      ["python"] = true,
     }
   end,
 }

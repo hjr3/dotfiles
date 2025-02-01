@@ -10,15 +10,17 @@ return {
     vim.g.ale_lint_on_text_changed = 0
     vim.g.ale_fix_on_save = 1
     vim.g.ale_linters = {
-      rust = { 'cargo' },
+      bash = { 'shellcheck' },
       javascript = { 'eslint' },
+      python = { 'ruff' },
+      rust = { 'cargo' },
       typescript = { 'eslint', 'ts_ls' },
       typescriptreact = { 'eslint', 'ts_ls' },
-      bash = { 'shellcheck' },
     }
     vim.g.ale_fixers = {
       dart = { 'dart-format' },
       javascript = { 'prettier' },
+      python = { 'ruff', 'ruff_format' },
       typescript = { 'prettier' },
       typescriptreact = { 'prettier' },
     }
