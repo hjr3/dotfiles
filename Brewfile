@@ -22,6 +22,7 @@ brew "postgresql@13", restart_service: true, link: true
 brew "ripgrep"
 brew "sqlite"
 brew "zola"
+cask "ghostty"
 cask "iterm2"
 cask "licecap"
 cask "ngrok"
