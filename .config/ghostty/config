@@ -1,6 +1,7 @@
 # use Brewfile to update
 auto-update = off
 font-family = Menlo
+scrollback-limt = 50000
 theme = Solarized Dark - Patched
 window-new-tab-position = end
 window-inherit-working-directory = false
