@@ -4,3 +4,9 @@ email = "herman@hermanradtke.com"
 
 [ui]
 default-command = "log"
+
+[aliases]
+# use difftastic
+difft = ["diff", "--tool", "difft"]
+# print first line of current revision
+fl = ["log", "--no-graph", "-r", "@", "--template", "description.first_line()"]
