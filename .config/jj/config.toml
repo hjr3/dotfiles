@@ -10,3 +10,5 @@ default-command = "log"
 difft = ["diff", "--tool", "difft"]
 # print first line of current revision
 fl = ["log", "--no-graph", "-r", "@", "--template", "description.first_line()"]
+# move ancestor bookmark to current revision
+tug = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@"]
