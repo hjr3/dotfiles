@@ -44,8 +44,6 @@ pathadd "$HOME/bin"
 export EC2_HOME=~/.ec2
 pathadd "$EC2_HOME/bin"
 
-pathadd "/usr/local/heroku/bin"
-
 if [ -d "$HOME/.cargo/env" ]; then
   source $HOME/.cargo/env
 fi
