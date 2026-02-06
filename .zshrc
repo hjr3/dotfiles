@@ -51,6 +51,9 @@ if [ -d "$HOME/.cargo/env" ]; then
 fi
 PATH="$HOME/.cargo/bin:$PATH"
 
+# for claude code native install
+pathadd "~/.local/bin"
+
 # so rust openssl crate can find the openssl installed by homebrew
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig/:$PKG_CONFIG_PATH"
 
