@@ -72,7 +72,6 @@ alias vi='nvim'
 alias vim='nvim'
 alias ls='eza'
 alias cat='bat --paging=always'
-alias git-branch-delete="git branch --merged | rg -v '(\*|\+)' | xargs -r git branch -d"
 
 # reverse search
 bindkey -v
