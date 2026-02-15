@@ -4,6 +4,7 @@
 # Manually add files we want to track
 !.claude
 !.claude/settings.json
+!.claude/CLAUDE.md
 !.config
 !.config/ghostty
 !.config/ghostty/config
