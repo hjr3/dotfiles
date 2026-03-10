@@ -2,6 +2,6 @@
 auto-update = off
 font-family = Menlo
 scrollback-limit = 50000
-theme = Solarized Dark - Patched
+theme = Solarized Dark Patched
 window-new-tab-position = end
 window-inherit-working-directory = false
