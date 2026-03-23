@@ -209,9 +209,6 @@ require('lazy').setup({
     },
   },
 
-  'tpope/vim-fugitive',
-  'tommcdo/vim-fubitive',
-
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
   -- This is often very useful to both group configuration, as well as handle
@@ -373,6 +370,10 @@ require('lazy').setup({
           -- Useful when you're not sure what type a variable is and you want to see
           -- the definition of its *type*, not where it was *defined*.
           vim.keymap.set('n', 'grt', builtin.lsp_type_definitions, { buffer = buf, desc = '[G]oto [T]ype Definition' })
+
+          -- custom
+          -- show error in modal
+          vim.keymap.set('n', '<leader>se', vim.diagnostic.open_float, { buffer = buf, desc = '[S]how [E]error' })
         end,
       })
 
@@ -887,7 +888,7 @@ require('lazy').setup({
   --    This is the easiest way to modularize your config.
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
